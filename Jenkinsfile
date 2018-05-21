@@ -21,7 +21,6 @@ pipeline {
             secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {*/
            // --extra-vars 'Branch_Name=${params.Branch_Name}'
-	    sh('sudo chmod +x /home/ubuntu/workspace/plays/script.sh')
 	    sh('/home/ubuntu/workspace/plays/script.sh')
 	    }}
            
@@ -30,7 +29,6 @@ pipeline {
            stage ('Iptables') {
               steps {
 	   //  --extra-vars 'Branch_Name=${params.Branch_Name}'
-	      sh('sudo chmod +x /home/ubuntu/workspace/iptables/script.sh')
 	      sh('/home/ubuntu/workspace/iptables/script.sh')}}
               }
               }
