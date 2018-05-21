@@ -28,6 +28,6 @@ pipeline {
            stage ('Iptables') {
               steps {
 	   //  --extra-vars 'Branch_Name=${params.Branch_Name}'
-	      sh('./users/running iptables playbook.sh')}}
+	      sh('./iptables/running iptables playbook.sh')}}
               }
               }
