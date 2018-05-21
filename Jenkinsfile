@@ -6,6 +6,7 @@ pipeline {
         //string(name: 'filter', defaultValue: 'user*', description: 'Filter keyword for security groups')}  
         string(name: 'Branch_Name', defaultValue: 'https://github.com/Rudya93/plays*', description: 'Branch')
         //${params.quantity} ${params.filter}"
+       }
     /* environment {
     AWS_BIN = '/home/ec2-user/.local/bin/aws'
     }*/
