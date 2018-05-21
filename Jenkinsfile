@@ -21,13 +21,13 @@ pipeline {
             secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {*/
            // --extra-vars 'Branch_Name=${params.Branch_Name}'
-	    sh('/users/running users playbook.sh')}}
+	    sh('./users/running users playbook.sh')}}
            
            
            
            stage ('Iptables') {
               steps {
 	   //  --extra-vars 'Branch_Name=${params.Branch_Name}'
-	      sh('/users/running iptables playbook.sh')}}
+	      sh('./users/running iptables playbook.sh')}}
               }
               }
