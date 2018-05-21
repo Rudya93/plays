@@ -4,7 +4,7 @@ pipeline {
        parameters {
        //string(name: 'quantity', defaultValue: '2', description: 'Quantity of app instances')
         //string(name: 'filter', defaultValue: 'user*', description: 'Filter keyword for security groups')}  
-        string(name: 'Branch Name', defaultValue: 'https://github.com/Rudya93/plays*', description: 'Branch')
+        string(name: 'Branch_Name', defaultValue: 'https://github.com/Rudya93/plays*', description: 'Branch')
         //${params.quantity} ${params.filter}"
     /* environment {
     AWS_BIN = '/home/ec2-user/.local/bin/aws'
@@ -19,13 +19,14 @@ pipeline {
             accessKeyVariable: 'AWS_ACCESS_KEY_ID',
             secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {*/
-            
+            --extra-vars 'Branch_Name=${params.Branch_Name}'
 	    sh('/users/running users playbook.sh')}}
            
            
            
            stage ('Iptables') {
               steps {
-              sh('/users/running iptables playbook.sh')}}
+	     --extra-vars 'Branch_Name=${params.Branch_Name}'
+	      sh('/users/running iptables playbook.sh')}}
               }
               }
